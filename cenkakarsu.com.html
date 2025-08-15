@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cenk Akarsu — Senior Software Engineer</title>
+    <meta
+      name="description"
+      content="Cenk Akarsu — Senior Software Engineer. Distributed systems, fintech, SOX compliance, and high-throughput processing at big tech."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      property="og:title"
+      content="Cenk Akarsu — Senior Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Distributed systems, fintech, SOX compliance, and high-throughput processing at big tech."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cenkakarsu.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      :root {
+        /* High-contrast dark palette */
+        --bg: #0d1117;
+        --card: #161b22;
+        --text: #f0f6fc;
+        --muted: #c9d1d9;
+        --accent: #58a6ff;
+        --line: #30363d;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+      }
+
+/* Links & focus */
+a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+      :focus-visible {
+        outline: 3px solid #94d2ff;
+        outline-offset: 3px;
+      }
+
+      /* Skip link */
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-link:focus {
+        left: 16px;
+        top: 16px;
+        width: auto;
+        height: auto;
+        padding: 10px 14px;
+        background: var(--card);
+        color: var(--text);
+        border: 2px solid #94d2ff;
+        border-radius: 8px;
+        z-index: 9999;
+      }
+
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 32px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: url("https://media.licdn.com/dms/image/v2/C4E03AQE6HkwgFfjGzw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1554974482014?e=1758153600&v=beta&t=-IIehKmJH7ltmLiwHdd6iQ1rgVffJKHe6I3XEk0pwWo")
+          center/cover no-repeat;
+      }
+      .brand h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      nav a {
+        color: var(--muted);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--line);
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: var(--card);
+        color: var(--text);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .btn:hover {
+        background-color: #21262d;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 28px;
+        margin-top: 40px;
+      }
+      .hero .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 20px;
+        padding: 28px;
+      }
+      .kicker {
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: 32px;
+        line-height: 1.3;
+        margin: 8px 0 12px;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .cta-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 22px;
+        flex-wrap: wrap;
+      }
+      .pill {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .grid .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        color: var(--text);
+      }
+      .small {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      section {
+        margin-top: 48px;
+      }
+      .section-title {
+        font-size: 20px;
+        margin: 0 0 10px;
+        color: var(--text);
+      }
+      ul.timeline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-left: 2px solid var(--line);
+      }
+      ul.timeline li {
+        position: relative;
+        margin: 0;
+        padding: 16px 16px 16px 22px;
+      }
+      ul.timeline li:before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 22px;
+        width: 10px;
+        height: 10px;
+        background: var(--accent);
+        border-radius: 50%;
+      }
+      footer {
+        margin: 60px 0 10px;
+        color: var(--muted);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .social {
+        display: flex;
+        gap: 10px;
+      }
+      .social a {
+        border: 1px solid var(--line);
+        padding: 8px 12px;
+        border-radius: 12px;
+        color: var(--muted);
+      }
+      .social a:hover {
+        background-color: #21262d;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      /* Reduce motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+
+    <!-- Structured data -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cenk Akarsu",
+        "jobTitle": "Senior Software Engineer",
+        "url": "https://cenkakarsu.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/cenkakarsu/",
+          "https://www.youtube.com/@cnkkrs"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Amsterdam",
+          "addressCountry": "NL"
+        },
+        "email": "mailto:cenk@cenkakarsu.com"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <h1>Cenk Akarsu</h1>
+            <div class="small">Senior Software Engineer • Amsterdam</div>
+          </div>
+        </div>
+        <nav role="navigation" aria-label="Primary">
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/cenkakarsu"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View LinkedIn profile"
+          >
+            <!-- LinkedIn icon -->
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              width="18"
+              height="18"
+            >
+              <path
+                d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.9-2.2 3.9-2.2 4.2 0 5 2.8 5 6.5V24h-4v-7.2c0-1.7 0-3.8-2.3-3.8s-2.6 1.8-2.6 3.7V24h-4V8z"
+              />
+            </svg>
+            LinkedIn
+          </a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section class="hero" aria-label="Hero">
+          <div class="card">
+            <div class="kicker">Big Tech • Distributed Systems • Fintech</div>
+            <h2>Software engineer building reliable, high-impact systems.</h2>
+            <p class="lead">
+              13+ years shipping at <strong>big tech</strong> — architected and
+              led financial close and real-time platforms at
+              <strong>Meta</strong> and <strong>Microsoft</strong>. Focused on
+              distributed systems, SOX-compliant fintech, and high-throughput
+              processing.
+            </p>
+            <div class="cta-row">
+              <a
+                class="btn"
+                href="https://www.linkedin.com/in/cenkakarsu"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Connect on LinkedIn</a
+              >
+              <a
+                class="btn"
+                href="https://www.youtube.com/@cnkkrs"
+                target="_blank"
+                rel="noopener noreferrer"
+                >YouTube Channel</a
+              >
+              <span class="pill">Amsterdam, NL</span>
+              <span class="pill">Open to impactful work</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin-top: 0">Snapshot</h3>
+            <div class="grid" style="grid-template-columns: 1fr; gap: 12px">
+              <div class="card" style="padding: 12px">
+                <div class="small">Meta</div>
+                <div><strong>Senior Software Engineer / Tech Lead</strong></div>
+                <div class="small">
+                  Financial Close Platform • $120B+ revenue processes
+                </div>
+              </div>
+              <div class="card" style="padding: 12px">
+                <div class="small">Microsoft</div>
+                <div><strong>Senior Software Engineer</strong></div>
+                <div class="small">
+                  M365 services • multi-region microservices at scale
+                </div>
+              </div>
+              <div class="card" style="padding: 12px">
+                <div class="small">Core Skills</div>
+                <div>
+                  Distributed Systems · Cloud · Fintech · SOX · React/TypeScript
+                  · C#/.NET · Python
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience">
+          <h3 class="section-title">Experience</h3>
+          <ul class="timeline">
+            <li>
+              <div>
+                <strong>Senior Software Engineer (Tech Lead), Meta</strong>
+              </div>
+              <div class="small">2022 — Present · Amsterdam, NL</div>
+              <div class="small">
+                Led the Close Platform powering Meta's monthly financial close;
+                delivered compliant systems processing $120B+ in annual revenue.
+              </div>
+            </li>
+            <li>
+              <div><strong>Senior Software Engineer, Microsoft</strong></div>
+              <div class="small">2018 — 2021 · Dublin, IE</div>
+              <div class="small">
+                Built multi-regional microservices and UX for M365; created
+                internal tooling and monitoring platforms to boost developer
+                productivity.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Senior Software Engineer, Garanti Technology</strong>
+              </div>
+              <div class="small">2013 — 2018 · Istanbul, TR</div>
+              <div class="small">
+                R&D with NLP/ML; audit management and large-scale intranet
+                systems.
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="skills">
+          <h3 class="section-title">Skills</h3>
+          <div class="grid">
+            <div class="card">
+              <h3>Architecture</h3>
+              <div class="small">
+                Distributed Systems, Cloud, Microservices, Scalability
+              </div>
+            </div>
+            <div class="card">
+              <h3>Fintech & Compliance</h3>
+              <div class="small">
+                SOX, Financial Close, Real-time Processing
+              </div>
+            </div>
+            <div class="card">
+              <h3>Stack</h3>
+              <div class="small">
+                React/TypeScript, C#/.NET, Python, SQL, Java
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="publications">
+          <h3 class="section-title">Publications</h3>
+          <div class="card">
+            <div>
+              <strong>Turkish TV Rating Prediction with Twitter</strong>
+            </div>
+            <div class="small">
+              24th IEEE Conference on Signal Processing and Communications
+              Applications (SIU), Zonguldak, Turkey, 16–19 May 2016.
+            </div>
+          </div>
+        </section>
+
+        <section id="education">
+          <h3 class="section-title">Education</h3>
+          <ul class="timeline">
+            <li>
+              <div>
+                <strong
+                  >Bahcesehir University - PhD, Computer Engineering -
+                  Discontinued</strong
+                >
+              </div>
+              <div class="small">2022 — Present · Amsterdam, NL</div>
+              <div class="small">
+                Research: Deep Learning, Recommender Systems, Data Mining, Big
+                Data, Machine Learning, NLP.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong
+                  >Yildiz Technical University - M.Sc., Computer
+                  Engineering</strong
+                >
+              </div>
+              <div class="small">M.Sc., Computer Engineering · 2012 — 2016</div>
+              <div class="small">
+                Thesis: “Predicting Turkish TV Ratings Using Twitter Data”.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Trakya University - B.Sc., Computer Engineering</strong>
+              </div>
+              <div class="small">B.Sc., Computer Engineering · 2008 — 2012</div>
+              <div class="small">Graduated 4th in class · GPA 3.5/4.</div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="contact">
+          <h3 class="section-title">Contact</h3>
+          <div class="card" style="padding: 18px">
+            <p class="small" style="margin: 0 0 8px">
+              Prefer LinkedIn for intros.
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="mailto:cenk@cenkakarsu.com"
+                >cenk@cenkakarsu.com</a
+              >
+              <a
+                class="btn"
+                href="https://www.linkedin.com/in/cenkakarsu"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+              <a
+                class="btn"
+                href="https://www.youtube.com/@cnkkrs"
+                target="_blank"
+                rel="noopener"
+                >YouTube</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>© <span id="year"></span> Cenk Akarsu</div>
+        <div class="social">
+          <a href="/Cenk_Akarsu_CV.pdf" title="Download CV">CV</a>
+          <a
+            href="https://www.linkedin.com/in/cenkakarsu"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.youtube.com/@cnkkrs"
+            target="_blank"
+            rel="noopener"
+            >YouTube</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        function init() {
+          var y = document.getElementById("year");
+          if (y) {
+            y.textContent = new Date().getFullYear();
+          }
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+  </body>
+</html>
